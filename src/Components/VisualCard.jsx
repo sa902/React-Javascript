@@ -1,7 +1,7 @@
 import CardTable from './CardTable'
 export default function VisualCard() {
 	return (
-		<div style={{}}>
+		<div style={{display: 'flex', justifyContent:'center'}}>
 			<img style={{ width: 325, height: 450, position: 'absolute' }} src="./CardBG.png" ></img>
 
 			<div style={{ width: 325, height: 450, position: 'relative', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>

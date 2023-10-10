@@ -1,5 +1,5 @@
 .flex-container {
-	width:"50%"
+	width:"50%";
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -8,8 +8,15 @@
   align-content: stretch;
 }
 .main{
-	width: 75%;
+  /* Media query tto ignore for smaller screens */
+	/* width: 75%; */
 	margin: auto;
+  @media (min-width: 960px){
+    width: 50%; 
+    /* 50% for form  */
+    /* 70% for results page */
+	}
+	
 }
 .logo{
 	width: 300px;
@@ -31,8 +38,8 @@
 .parent {
 	margin:auto;
 	width:60%;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-grid-template-rows: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-rows: repeat(3, 1fr);
 }
 
