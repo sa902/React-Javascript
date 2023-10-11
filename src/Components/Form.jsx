@@ -66,12 +66,12 @@ width:140px;
 
 export default function Form({search,handleFormClick}){
     const [formData, setFormData] = useState({
-        bedroomMin: '',
-        bedroomMax: '',
-        bathroomMin: '',
-        bathroomMax: '',
-        priceMin: '',
-        priceMax: '',
+        minBedroom: '',
+        maxBedroom: '',
+        minBathroom: '',
+        maxBathroom: '',
+        minPrice: '',
+        maxPrice: '',
       });
       const handleSubmit = (e) => {
         e.preventDefault();
@@ -101,8 +101,8 @@ export default function Form({search,handleFormClick}){
   )} */}
           <label>Bedroom Minimum:</label>
           <Select
-            name="bedroomMin"
-            value={formData.bedroomMin}
+            name="minBedroom"
+            value={formData.minBedroom}
             onChange={handleInputChange}
           >
             <option value="">Select</option>
@@ -116,8 +116,8 @@ export default function Form({search,handleFormClick}){
                 <Item>
                 <label>Bedroom Maximum:</label>
           <Select
-            name="bedroomMax"
-            value={formData.bedroomMax}
+            name="maxBedroom"
+            value={formData.maxBedroom}
             onChange={handleInputChange}
           >
             <option value="">Select</option>
@@ -130,8 +130,8 @@ export default function Form({search,handleFormClick}){
                 <Item>      
                 <label>Bathroom Minimum:</label>
           <Select
-            name="bathroomMin"
-            value={formData.bathroomMin}
+            name="minBathroom"
+            value={formData.minBathroom}
             onChange={handleInputChange}
           >
             <option value="">Select</option>
@@ -144,8 +144,8 @@ export default function Form({search,handleFormClick}){
                 <Item>
                 <label>Bathroom Maximum:</label>
           <Select
-            name="bathroomMax"
-            value={formData.bathroomMax}
+            name="maxBathroom"
+            value={formData.maxBathroom}
             onChange={handleInputChange}
           >
             <option value="">Select</option>
@@ -158,8 +158,8 @@ export default function Form({search,handleFormClick}){
                 <Item>
                 <label>Price Minimum:</label>
           <Select
-            name="priceMin"
-            value={formData.priceMin}
+            name="minPrice"
+            value={formData.minPrice}
             onChange={handleInputChange}
           >
             <option value="">Select</option>
@@ -172,8 +172,8 @@ export default function Form({search,handleFormClick}){
                 <Item>
                 <label>Price Minimum:</label>
           <Select
-            name="priceMax"
-            value={formData.priceMax}
+            name="maxPrice"
+            value={formData.maxPrice}
             onChange={handleInputChange}
           >
             <option value="">Select</option>

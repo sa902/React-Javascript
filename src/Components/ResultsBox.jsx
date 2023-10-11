@@ -32,9 +32,9 @@ padding:1em;
 `
 const NewSearchButton = styled.button``
 
-const  fetchDataFromServer = (currentPage) => {
+const  fetchDataFromServer = (currentPage,searchData) => {
 	console.log(`inside fetch data from server and current page here is ${currentPage}`)
-	const params = {currentPage: currentPage};
+	const params = {...{currentPage: currentPage}, ...searchData}
 	return axios.get(`https://sebhcug5f9.execute-api.eu-west-2.amazonaws.com/dev/Houses/GetAll`,{
 		params,
 		paramsSerializer: (params) => {return "reqParams="+ encodeURIComponent(JSON.stringify(params))}
@@ -42,7 +42,7 @@ const  fetchDataFromServer = (currentPage) => {
 } 
 export default function ResultsBox({search,searchData}) {
 	let [currentPage, setCurrentPage] = useState(1);
-	let {isLoading, data,isFetching} = useQuery(['get-houses',currentPage],() => fetchDataFromServer(currentPage),{enabled:true})
+	let {isLoading, data,isFetching} = useQuery(['get-houses',currentPage],() => fetchDataFromServer(currentPage,searchData),{enabled:true})
 
 	const onPageChange = (i) => {
 		setCurrentPage(i)
@@ -64,8 +64,9 @@ export default function ResultsBox({search,searchData}) {
 			{
 				data?.data?.data.map(house => {
 					return (
-							<Item>
-								<VisualCard 
+							<Item key={house.id}>
+								<VisualCard
+								key={house.id} 
 								title={house.title}
 								image={house.image_ids[0]}
 								tableData={{
