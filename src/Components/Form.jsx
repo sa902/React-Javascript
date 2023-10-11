@@ -58,7 +58,7 @@ const Select = styled.select`
 width:140px;
 `
 
-export default function Form({search}){
+export default function Form({search,handleFormClick}){
     const [formData, setFormData] = useState({
         bedroomMin: '',
         bedroomMax: '',
@@ -69,8 +69,7 @@ export default function Form({search}){
       });
       const handleSubmit = (e) => {
         e.preventDefault();
-        // You can perform actions with the form data here, such as sending it to a server
-        console.log(formData);
+        handleFormClick(formData)
       };
       const handleInputChange = (e) => {
         const { name, value } = e.target;

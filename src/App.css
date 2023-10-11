@@ -8,15 +8,10 @@
   align-content: stretch;
 }
 .main{
-  /* Media query tto ignore for smaller screens */
-	/* width: 75%; */
 	margin: auto;
   @media (min-width: 960px){
-    width: 50%; 
-    /* 50% for form  */
-    /* 70% for results page */
+    width: 70%; 
 	}
-	
 }
 .logo{
 	width: 300px;
