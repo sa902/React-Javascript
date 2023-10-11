@@ -42,8 +42,14 @@ const  fetchDataFromServer = (currentPage,searchData) => {
 } 
 export default function ResultsBox({search,searchData}) {
 	let [currentPage, setCurrentPage] = useState(1);
+	let [totalPages, setTotalPages] = useState(0);
 	let {isLoading, data,isFetching} = useQuery(['get-houses',currentPage],() => fetchDataFromServer(currentPage,searchData),{enabled:true,refetchOnWindowFocus:false})
-
+	const setTotalPagesOnFirstSearch = () => {
+		data?.data?.pagination?.lastPage ? setTotalPages(data?.data?.pagination?.lastPage) : null; 
+		console.log('inside  setTotalPagesOnFirstSearch' , data?.data?.pagination?.lastPage)
+		
+	}
+	useEffect(setTotalPagesOnFirstSearch, [data])
 	const onPageChange = (i) => {
 		setCurrentPage(i)
 		console.log('Changing page, ',i)
@@ -79,7 +85,7 @@ export default function ResultsBox({search,searchData}) {
 				})
 			}
 		</Container>
-		<Pagination currentPage={currentPage} totalPages={10} onPageChange={onPageChange}></Pagination>
+		<Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange}></Pagination>
 		</div>
 
 	)

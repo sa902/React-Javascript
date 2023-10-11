@@ -74,7 +74,11 @@ export default function Form({search,handleFormClick}){
         maxPrice: '',
       });
       const priceRange = Array.from({ length: 11 }, (_, index) => (index === 0 ? "" : (index * 100).toString()));
-
+      //TODO API to get max bathrooms and bed rooms, constants for now 
+      const maxBathroom = 4
+      const maxBedroom = 6
+      const bedRoomRange = Array.from({ length: maxBedroom +1 }, (_, index) => (index === 0 ? "" : index.toString()));
+      const bathroomRange = Array.from({ length: maxBathroom+1 }, (_, index) => (index === 0 ? "" : index.toString()));
       console.log(priceRange);
     
       const handleSubmit = (e) => {
@@ -109,11 +113,12 @@ export default function Form({search,handleFormClick}){
             value={formData.minBedroom}
             onChange={handleInputChange}
           >
-            <option value="">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            {/* Add more options as needed */}
+            {   
+              bedRoomRange.map(i => {
+                if (i === "") {return <option value={i}>Select</option>}
+                return <option value={i}>{i}</option>
+              })
+            }
           </Select>
  
                 </Item>
@@ -124,11 +129,12 @@ export default function Form({search,handleFormClick}){
             value={formData.maxBedroom}
             onChange={handleInputChange}
           >
-            <option value="">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            {/* Add more options as needed */}
+        {   
+              bedRoomRange.map(i => {
+                if (i === "") {return <option value={i}>Select</option>}
+                return <option value={i}>{i}</option>
+              })
+            }
           </Select>      
                 </Item>
                 <Item>      
@@ -138,11 +144,12 @@ export default function Form({search,handleFormClick}){
             value={formData.minBathroom}
             onChange={handleInputChange}
           >
-            <option value="">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            {/* Add more options as needed */}
+            {   
+              bathroomRange.map(i => {
+                if (i === "") {return <option value={i}>Select</option>}
+                return <option value={i}>{i}</option>
+              })
+            }
           </Select>
                 </Item>
                 <Item>
@@ -152,11 +159,12 @@ export default function Form({search,handleFormClick}){
             value={formData.maxBathroom}
             onChange={handleInputChange}
           >
-            <option value="">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            {/* Add more options as needed */}
+            {
+              bathroomRange.map(i => {
+                if (i === "") {return <option value={i}>Select</option>}
+                return <option value={i}>{i}</option>
+              })
+            }
           </Select>
                 </Item>
                 <Item>
@@ -172,7 +180,6 @@ export default function Form({search,handleFormClick}){
                 return <option value={i}>${i}</option>
               })
             }
-            {/* Add more options as needed */}
           </Select>
                 </Item>
                 <Item>
@@ -188,11 +195,6 @@ export default function Form({search,handleFormClick}){
                 return <option value={i}>${i}</option>
               })
             }
-            {/* <option value="">Select</option>
-            <option value="100000">$100,000</option>
-            <option value="200000">$200,000</option>
-            <option value="300000">$300,000</option> */}
-            {/* Add more options as needed */}
           </Select>
                 </Item>
                 <ButtonContainer> 

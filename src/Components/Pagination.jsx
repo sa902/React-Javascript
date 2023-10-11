@@ -35,7 +35,22 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const renderPageNumbers = () => {
     const pageNumbers = [];
 
-    for (let i = 1; i <= totalPages; i++) {
+    const maxPages = 10;
+    const halfMax = Math.floor(maxPages / 2);
+    let startPage = currentPage - halfMax;
+    let endPage = currentPage + halfMax;
+
+    if (startPage < 1) {
+      startPage = 1;
+      endPage = maxPages;
+    }
+
+    if (endPage > totalPages) {
+      endPage = totalPages;
+      startPage = Math.max(1, totalPages - maxPages + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
       pageNumbers.push(
         <PageNumber
           key={i}
