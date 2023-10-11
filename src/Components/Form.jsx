@@ -14,16 +14,22 @@ const Container = styled.div`
 		@media (min-width: 1200px){
 		grid-template-columns: repeat(2, 1fr);
 	}
+  @media (min-width: 768px){
     div:nth-of-type(even){
-        justify-self: start;
-      }
-      
-      div:nth-of-type(odd){
-        justify-self: end;
-      }
-      div:nth-last-of-type(1){
-        justify-self: center;
-      }
+      justify-self: start;
+    }
+    
+    div:nth-of-type(odd){
+      justify-self: end;
+    }
+    div:nth-last-of-type(1){
+      justify-self: center;
+    }
+  }
+  div{
+    justify-self:center;
+  }
+ 
 `
 const Item = styled.div`
         display:flex; 
