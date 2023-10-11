@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledTable = styled.table`
   margin: 0.5em 0;
-  font-family: 'inter', sans-serif; 
+  font-family: 'Patrick hand', sans-serif; 
   text-align: start;
   width:60%;
   tr{
@@ -12,7 +12,7 @@ const StyledTable = styled.table`
   }
   th, td {
 	font-weight:bold;
-    font-size: 14px; 
+    font-size: 18px; 
   }
 `;
 
@@ -22,7 +22,7 @@ const CardTable = ({ tableData }) => {
       <tbody>
         <tr>
           <th>Price</th>
-          <th>{tableData?.price}</th>
+          <th>${tableData?.price} p/wk</th>
         </tr>
         <tr>
           <td>Bedroom</td>

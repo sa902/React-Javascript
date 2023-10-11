@@ -16,7 +16,7 @@ const StyledButton = styled.button`
     position: relative;
     background-color: #fff;
     float: left;
-    font: normal 22px/25px "Dosis", sans-serif;
+    font: normal 22px/25px "Patrick Hand", sans-serif;
     text-transform: uppercase;
     padding-bottom: 3px;
     transition: padding 0.1s, box-shadow 0.1s, top 0.1s;

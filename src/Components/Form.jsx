@@ -43,8 +43,8 @@ const Item = styled.div`
 `
 const Label = styled.label`
     padding: 5px;
-    font-family:"Dosis"
-    font-size:20px;
+    font-family:"Patrick Hand"
+    font-size:25px;
 `
 const ButtonContainer = styled.div`
     padding:1em;
@@ -68,7 +68,7 @@ border-top-left-radius: 255px 15px;
 border-top-right-radius: 15px 225px;
 border-bottom-right-radius: 225px 15px;
 border-bottom-left-radius:15px 255px;
-font-family: 'Dosis';
+font-family: 'Patrick Hand';
 /*     font-family: 'Shadows Into Light', cursive; */
 /*     font-family: 'Covered By Your Grace', cursive; */
 padding: .2rem .4rem;

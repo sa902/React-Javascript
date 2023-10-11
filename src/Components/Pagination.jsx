@@ -12,7 +12,7 @@ const PageNumbers = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
-  font-family:"Glass Antiqua";
+  font-family:"Patrick Hand";
   font-size: 20px;
 `;
 
@@ -32,6 +32,11 @@ const ArrowButton = styled.button`
   padding: 0 5px;
   outline: none;
 `;
+
+const Image = styled.img`
+max-width : 50px;
+`
+
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const renderPageNumbers = () => {
@@ -73,14 +78,14 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        &#8592; {/* Left arrow */}
+        <Image src="Left.png" />
       </ArrowButton>
       <PageNumbers>{renderPageNumbers()}</PageNumbers>
       <ArrowButton
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        &#8594; {/* Right arrow */}
+        <Image src="Right.png" />
       </ArrowButton>
     </PaginationContainer>
   );
