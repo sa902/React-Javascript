@@ -14,6 +14,8 @@
   "dependencies": {
     "@tanstack/react-query": "^4.36.1",
     "axios": "^1.5.1",
+    "react-rough": "^2.3.0",
+    "roughjs": "^4.6.4",
     "styled-components": "^6.0.8"
   },
   "devDependencies": {

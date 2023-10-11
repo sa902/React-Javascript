@@ -52,6 +52,8 @@ const ButtonContainer = styled.div`
     justify-content: center !important;
     align-items: center;
 `
+
+
 const Button = styled.button`
     width: 100px;
     height: 35px;
@@ -62,6 +64,25 @@ const Button = styled.button`
     //     width: 20%;
 	// }
     // height:100%;
+    display: block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    position: relative;
+    float: left;
+    font: normal 22px/25px "Dosis", sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    transition: padding 0.1s, box-shadow 0.1s, top 0.1s;
+  
+    &:hover {
+      box-shadow: 0 2px 0px 2px #000;
+    }
+    &:active {
+      top: 4px;
+      padding-bottom: 0px;
+      box-shadow: 0 1px 0 #000;
+    }
 `
 const Select = styled.select`
 // width:140px;

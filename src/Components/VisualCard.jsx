@@ -1,7 +1,10 @@
 import CardTable from './CardTable'
+const handleCardClick = () => {
+	console.log('handled click')
+}
 export default function VisualCard({title, tableData,image}) {
 	return (
-		<div style={{display: 'flex', justifyContent:'center'}}>
+		<div style={{display: 'flex', justifyContent:'center'}} onClick={handleCardClick}>
 			<img style={{ width: 325, height: 450, position: 'absolute' }} src="./CardBG.png" ></img>
 			
 			<div style={{ width: 325, height: 425, position: 'relative', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center', display: 'inline-flex' }}>
