@@ -1,6 +1,6 @@
 export default function CardTable({tableData}) {
 	return (
-		<table style={{ marginTop: "0.5em" }}>
+		<table style={{ marginTop: "0.5em", marginBottom: "1em" }}>
 			<tbody>
 				<tr>
 					<th>Price</th>

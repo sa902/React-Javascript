@@ -42,7 +42,7 @@ const  fetchDataFromServer = (currentPage,searchData) => {
 } 
 export default function ResultsBox({search,searchData}) {
 	let [currentPage, setCurrentPage] = useState(1);
-	let {isLoading, data,isFetching} = useQuery(['get-houses',currentPage],() => fetchDataFromServer(currentPage,searchData),{enabled:true})
+	let {isLoading, data,isFetching} = useQuery(['get-houses',currentPage],() => fetchDataFromServer(currentPage,searchData),{enabled:true,refetchOnWindowFocus:false})
 
 	const onPageChange = (i) => {
 		setCurrentPage(i)

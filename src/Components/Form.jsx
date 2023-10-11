@@ -73,6 +73,10 @@ export default function Form({search,handleFormClick}){
         minPrice: '',
         maxPrice: '',
       });
+      const priceRange = Array.from({ length: 11 }, (_, index) => (index === 0 ? "" : (index * 100).toString()));
+
+      console.log(priceRange);
+    
       const handleSubmit = (e) => {
         e.preventDefault();
         handleFormClick(formData)
@@ -162,24 +166,32 @@ export default function Form({search,handleFormClick}){
             value={formData.minPrice}
             onChange={handleInputChange}
           >
-            <option value="">Select</option>
-            <option value="100000">$100,000</option>
-            <option value="200000">$200,000</option>
-            <option value="300000">$300,000</option>
+          {
+              priceRange.map(i => {
+                if (i === "") {return <option value={i}>Select</option>}
+                return <option value={i}>${i}</option>
+              })
+            }
             {/* Add more options as needed */}
           </Select>
                 </Item>
                 <Item>
-                <label>Price Minimum:</label>
+                <label>Price Maximum:</label>
           <Select
             name="maxPrice"
             value={formData.maxPrice}
             onChange={handleInputChange}
           >
-            <option value="">Select</option>
+            {
+              priceRange.map(i => {
+                if (i === "") {return <option value={i}>Select</option>}
+                return <option value={i}>${i}</option>
+              })
+            }
+            {/* <option value="">Select</option>
             <option value="100000">$100,000</option>
             <option value="200000">$200,000</option>
-            <option value="300000">$300,000</option>
+            <option value="300000">$300,000</option> */}
             {/* Add more options as needed */}
           </Select>
                 </Item>
