@@ -54,7 +54,6 @@ export default function ResultsBox({search,searchData}) {
 	 
 	return (
 		<div>
-		
 		<NewSearchButtonContainer>
 			<NewSearchButton onClick={search}>
 				Start New Search
@@ -67,16 +66,12 @@ export default function ResultsBox({search,searchData}) {
 							<Item>
 								<VisualCard 
 								title={house.title}
+								image={house.image_ids[0]}
 								tableData={{
 									bathroom:house.bathrooms,
 									bedroom: house.bedrooms,
 									price:house.price,
-								}}
-								/>
-								{/* <h2> {house.title}</h2>
-								<h3>{house.bedrooms} & {house.bathrooms}</h3>
-								<h3>{house.price}</h3>
-								<h3>{house.description}</h3> */}
+								}}/>
 							</Item>
 					)
 				})
