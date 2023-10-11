@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {useState} from 'react';
 const Container = styled.div`
+    font-family:"inter";
     display:grid;
     grid-gap: 25px;
     margin: 1em;
@@ -36,11 +37,13 @@ const Item = styled.div`
         // margin-left:1em;
         // margin-right: 1em;
 		justify-content: space-between;
-        // width: 80%;
+        width: 170px;
         flex-direction:column;
 `
 const Label = styled.label`
     padding: 5px;
+    font-family:"Dosis"
+    font-size:20px;
 `
 const ButtonContainer = styled.div`
     padding:1em;
@@ -61,8 +64,25 @@ const Button = styled.button`
     // height:100%;
 `
 const Select = styled.select`
-width:140px;
+// width:140px;
+
+background: transparent;
+// -ms-flex-item-align: center;
+    // align-self: center;
+outline: none;
+border: 2.5px solid;
+border-top-left-radius: 255px 15px;
+border-top-right-radius: 15px 225px;
+border-bottom-right-radius: 225px 15px;
+border-bottom-left-radius:15px 255px;
+font-family: 'Dosis';
+/*     font-family: 'Shadows Into Light', cursive; */
+/*     font-family: 'Covered By Your Grace', cursive; */
+padding: .2rem .4rem;
+// color: #717171;
+
 `
+
 
 export default function Form({search,handleFormClick}){
     const [formData, setFormData] = useState({
@@ -107,7 +127,7 @@ export default function Form({search,handleFormClick}){
                 {/* {Array(10).fill(1).map((el, i) =>
      <option key={i} value={i} >{i}</option>
   )} */}
-          <label>Bedroom Minimum:</label>
+          <Label>Bedroom Minimum:</Label>
           <Select
             name="minBedroom"
             value={formData.minBedroom}
@@ -123,7 +143,7 @@ export default function Form({search,handleFormClick}){
  
                 </Item>
                 <Item>
-                <label>Bedroom Maximum:</label>
+                <Label>Bedroom Maximum:</Label>
           <Select
             name="maxBedroom"
             value={formData.maxBedroom}
@@ -138,7 +158,7 @@ export default function Form({search,handleFormClick}){
           </Select>      
                 </Item>
                 <Item>      
-                <label>Bathroom Minimum:</label>
+                <Label>Bathroom Minimum:</Label>
           <Select
             name="minBathroom"
             value={formData.minBathroom}
@@ -153,7 +173,7 @@ export default function Form({search,handleFormClick}){
           </Select>
                 </Item>
                 <Item>
-                <label>Bathroom Maximum:</label>
+                <Label>Bathroom Maximum:</Label>
           <Select
             name="maxBathroom"
             value={formData.maxBathroom}
@@ -168,7 +188,7 @@ export default function Form({search,handleFormClick}){
           </Select>
                 </Item>
                 <Item>
-                <label>Price Minimum:</label>
+                <Label>Price Minimum:</Label>
           <Select
             name="minPrice"
             value={formData.minPrice}
@@ -183,7 +203,7 @@ export default function Form({search,handleFormClick}){
           </Select>
                 </Item>
                 <Item>
-                <label>Price Maximum:</label>
+                <Label>Price Maximum:</Label>
           <Select
             name="maxPrice"
             value={formData.maxPrice}
@@ -259,7 +279,7 @@ export default function Form({search,handleFormClick}){
 //     <div>
 //       <StyledForm onSubmit={handleSubmit}>
 //         <StyledGridItem>
-//           <label>Bedroom Minimum:</label>
+//           <Label>Bedroom Minimum:</Label>
 //           <select
 //             name="bedroomMin"
 //             value={formData.bedroomMin}

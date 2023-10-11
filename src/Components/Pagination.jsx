@@ -12,6 +12,8 @@ const PageNumbers = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
+  font-family:"Glass Antiqua";
+  font-size: 20px;
 `;
 
 const PageNumber = styled.li`
