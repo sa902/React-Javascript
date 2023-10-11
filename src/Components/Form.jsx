@@ -38,13 +38,17 @@ const Item = styled.div`
         // margin-left:1em;
         // margin-right: 1em;
 		justify-content: space-between;
-        width: 170px;
+        width:90%;
         flex-direction:column;
+        @media (min-width: 960px){
+          grid-template-columns: repeat(2, 1fr);
+          width: 170px;
+        }
 `
 const Label = styled.label`
     padding: 5px;
-    font-family:"Patrick Hand"
-    font-size:25px;
+    font-family:"Patrick Hand";
+    font-size:18px;
 `
 const ButtonContainer = styled.div`
     padding:1em;
