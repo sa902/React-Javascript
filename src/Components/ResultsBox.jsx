@@ -42,7 +42,7 @@ const  fetchDataFromServer = (currentPage) => {
 export default function ResultsBox({search,searchData}) {
 	let [currentPage, setCurrentPage] = useState(1);
 	const {isLoading, data} = useQuery(['get-houses'],() => fetchDataFromServer(currentPage))
-	
+
 	const onPageChange = (i) => {
 		setCurrentPage(i)
 		console.log('page, ',i)
@@ -54,45 +54,35 @@ export default function ResultsBox({search,searchData}) {
 	 
 	return (
 		<div>
-			{
-				data?.data?.data.map(house => {
-					return (
-
-							<div>
-								<h2> {house.title}</h2>
-								<h3>{house.bedrooms} & {house.bathrooms}</h3>
-								<h3>{house.price}</h3>
-								<h3>{house.description}</h3>
-							</div>
-					)
-				})
-			}
-		{/* <NewSearchButtonContainer>
+		
+		<NewSearchButtonContainer>
 			<NewSearchButton onClick={search}>
 				Start New Search
 			</NewSearchButton>
 		</NewSearchButtonContainer>	
 		<Container >
-			<Item>
-				<VisualCard />
-			</Item>
-			<Item>
-				<VisualCard />
-			</Item>
-			<Item>
-				<VisualCard />
-			</Item>
-			<Item>
-				<VisualCard />
-			</Item>
-			<Item>
-				<VisualCard />
-			</Item>
-			<Item>
-				<VisualCard />
-			</Item>
+			{
+				data?.data?.data.map(house => {
+					return (
+							<Item>
+								<VisualCard 
+								title={house.title}
+								tableData={{
+									bathroom:house.bathrooms,
+									bedroom: house.bedrooms,
+									price:house.price,
+								}}
+								/>
+								{/* <h2> {house.title}</h2>
+								<h3>{house.bedrooms} & {house.bathrooms}</h3>
+								<h3>{house.price}</h3>
+								<h3>{house.description}</h3> */}
+							</Item>
+					)
+				})
+			}
 		</Container>
-		<Pagination currentPage={currentPage} totalPages={10} onPageChange={onPageChange}  ></Pagination> */}
+		<Pagination currentPage={currentPage} totalPages={10} onPageChange={onPageChange}  ></Pagination>
 		</div>
 
 	)
