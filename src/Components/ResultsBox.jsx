@@ -4,6 +4,7 @@ import axios from 'axios';
 import VisualCard from './VisualCard'
 import styled from 'styled-components';
 import Pagination from "../Components/Pagination"
+import Button from './Button'
 
 const Container = styled.div`
 display:grid;
@@ -30,7 +31,7 @@ height:2em;
 margin:1em;
 padding:1em;
 `
-const NewSearchButton = styled.button``
+
 
 const  fetchDataFromServer = (currentPage,searchData) => {
 	console.log(`inside fetch data from server and current page here is ${currentPage}`)
@@ -62,9 +63,7 @@ export default function ResultsBox({search,searchData}) {
 	return (
 		<div>
 		<NewSearchButtonContainer>
-			<NewSearchButton onClick={search}>
-				Start New Search
-			</NewSearchButton>
+			<Button clickFn={search} text={"Start New Search"} />
 		</NewSearchButtonContainer>	
 		<Container >
 			{
