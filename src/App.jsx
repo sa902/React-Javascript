@@ -25,27 +25,6 @@ export default function App() {
 		<QueryClientProvider client={queryClient}>
       <GlobalStyle />
 			<Layout>
-{/* 
-<motion.main>
-
-
-			<motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="save-button"
-          onClick={open}
-        >
-          Launch modal
-        </motion.div>
-</motion.main>
-      <AnimatePresence
-    initial={false}
-	mode={'wait'}
-  >
-  {modalOpen && (
-          <Modal modalOpen={modalOpen} text={"TEST TEXT"}  handleClose={close} />
-        )}
-  </AnimatePresence> */}
 				{isForm ? <Form search={search} handleFormClick={handleFormClick} ></Form> : <ResultsBox search={search} searchData={searchData} ></ResultsBox>}
 			</Layout>
 		</QueryClientProvider>

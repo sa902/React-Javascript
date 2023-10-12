@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-
+import {styled} from 'styled-components'
 import Backdrop from "./Backdrop/";
 
 const dropIn = {
@@ -24,7 +24,17 @@ const dropIn = {
   },
 };
 
-
+const ModalSheet = styled.div`
+background-color: #fff;
+width: clamp(50%, 700px, 90%);
+// height: min(50%, 300px);
+margin: auto;
+padding: 0 2rem;
+border-radius: 12px;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
 
 
 const Modal = ({ handleClose, text }) => {
@@ -32,17 +42,22 @@ const Modal = ({ handleClose, text }) => {
 
   return (
     <Backdrop onClick={handleClose}>
+      <ModalSheet>
         <motion.div
           onClick={(e) => e.stopPropagation()}  // Prevent click from closing modal
-          className="modal orange-gradient"
+          className=""
           variants={dropIn}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
+        </motion.div>
+          <ModalText text={text} />
+          <ModalText text={text} />
+          <ModalText text={text} />
           <ModalText text={text} />
           <ModalButton onClick={handleClose} label="Close" />
-        </motion.div>
+        </ModalSheet>
 
     </Backdrop>
   );

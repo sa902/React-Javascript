@@ -58,8 +58,6 @@ const ButtonContainer = styled.div`
     align-items: center;
 `
 
-
-
 const Select = styled.select`
 // width:140px;
 
@@ -79,8 +77,6 @@ padding: .2rem .4rem;
 // color: #717171;
 
 `
-
-
 export default function Form({search,handleFormClick}){
     const [formData, setFormData] = useState({
         minBedroom: '',
@@ -121,9 +117,6 @@ export default function Form({search,handleFormClick}){
 <div>
 <Container>
                 <Item>   
-                {/* {Array(10).fill(1).map((el, i) =>
-     <option key={i} value={i} >{i}</option>
-  )} */}
           <Label>Bedroom Minimum:</Label>
           <Select
             name="minBedroom"
@@ -222,149 +215,5 @@ export default function Form({search,handleFormClick}){
 
     )
 }
-
-// import React, { useState } from 'react';
-// import styled from 'styled-components';
-
-// const StyledForm = styled.form`
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   gap: 10px;
-
-//   /* Apply different justify-content styles to odd and even rows */
-//   div:nth-child(odd) {
-//     justify-content: flex-end;
-//   }
-
-//   div:nth-child(even) {
-//     justify-content: flex-start;
-//   }
-// `;
-
-// const StyledGridItem = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-// `;
-
-// function Form() {
-//   const [formData, setFormData] = useState({
-//     bedroomMin: '',
-//     bedroomMax: '',
-//     bathroomMin: '',
-//     bathroomMax: '',
-//     priceMin: '',
-//     priceMax: '',
-//   });
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value,
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // You can perform actions with the form data here, such as sending it to a server
-//     console.log(formData);
-//   };
-
-//   return (
-//     <div>
-//       <StyledForm onSubmit={handleSubmit}>
-//         <StyledGridItem>
-//           <Label>Bedroom Minimum:</Label>
-//           <select
-//             name="bedroomMin"
-//             value={formData.bedroomMin}
-//             onChange={handleInputChange}
-//           >
-//             <option value="">Select</option>
-//             <option value="1">1</option>
-//             <option value="2">2</option>
-//             <option value="3">3</option>
-//             {/* Add more options as needed */}
-//           </select>
-//         </StyledGridItem>
-//         <StyledGridItem>
-//           <label>Bedroom Maximum:</label>
-//           <select
-//             name="bedroomMax"
-//             value={formData.bedroomMax}
-//             onChange={handleInputChange}
-//           >
-//             <option value="">Select</option>
-//             <option value="1">1</option>
-//             <option value="2">2</option>
-//             <option value="3">3</option>
-//             {/* Add more options as needed */}
-//           </select>
-//         </StyledGridItem>
-//         <StyledGridItem>
-//           <label>Bathroom Minimum:</label>
-//           <select
-//             name="bathroomMin"
-//             value={formData.bathroomMin}
-//             onChange={handleInputChange}
-//           >
-//             <option value="">Select</option>
-//             <option value="1">1</option>
-//             <option value="2">2</option>
-//             <option value="3">3</option>
-//             {/* Add more options as needed */}
-//           </select>
-//         </StyledGridItem>
-//         <StyledGridItem>
-//           <label>Bathroom Maximum:</label>
-//           <select
-//             name="bathroomMax"
-//             value={formData.bathroomMax}
-//             onChange={handleInputChange}
-//           >
-//             <option value="">Select</option>
-//             <option value="1">1</option>
-//             <option value="2">2</option>
-//             <option value="3">3</option>
-//             {/* Add more options as needed */}
-//           </select>
-//         </StyledGridItem>
-//         <StyledGridItem>
-//           <label>Price Minimum:</label>
-//           <select
-//             name="priceMin"
-//             value={formData.priceMin}
-//             onChange={handleInputChange}
-//           >
-//             <option value="">Select</option>
-//             <option value="100000">$100,000</option>
-//             <option value="200000">$200,000</option>
-//             <option value="300000">$300,000</option>
-//             {/* Add more options as needed */}
-//           </select>
-//         </StyledGridItem>
-//         <StyledGridItem>
-//           <label>Price Maximum:</label>
-//           <select
-//             name="priceMax"
-//             value={formData.priceMax}
-//             onChange={handleInputChange}
-//           >
-//             <option value="">Select</option>
-//             <option value="100000">$100,000</option>
-//             <option value="200000">$200,000</option>
-//             <option value="300000">$300,000</option>
-//             {/* Add more options as needed */}
-//           </select>
-//         </StyledGridItem>
-//         <button type="submit">Submit</button>
-//       </StyledForm>
-//     </div>
-//   );
-// }
-
-// export default Form;
 
 
