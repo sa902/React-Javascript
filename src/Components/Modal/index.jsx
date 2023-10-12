@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import Backdrop from "./Backdrop/";
 import CardTable from "../CardTable";
 import Button from "../Button";
+import ImageCarousel from "../ImageCarousel";
 
 const dropIn = {
   hidden: {
@@ -61,6 +62,7 @@ const Modal = ({ handleClose, house }) => {
             price={price}
           ></CardTable>
           <h4>{house.description}</h4>
+          <ImageCarousel images={house.image_ids}></ImageCarousel>
         </ModalContent>
 
         <Button clickFn={handleClose} text={"close"}></Button>
