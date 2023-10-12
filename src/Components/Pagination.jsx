@@ -38,6 +38,7 @@ const Image = styled.img`
 `;
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  console.log('this is the total pages');
   const renderPageNumbers = () => {
     const pageNumbers = [];
 

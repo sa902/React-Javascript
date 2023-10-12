@@ -17,9 +17,7 @@ const Container = styled.div`
 const NewSearchButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: 2em;
   margin: 1em;
-  padding: 1em;
 `;
 
 const fetchDataFromServer = (currentPage, searchData) => {
@@ -32,10 +30,16 @@ const fetchDataFromServer = (currentPage, searchData) => {
 
 export default function ResultsBox({ search, searchData }) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
   const { isLoading, data, isFetching } = useQuery(["get-houses", currentPage], () =>
     fetchDataFromServer(currentPage, searchData),{ enabled: true, refetchOnWindowFocus: false }
   );
-  const totalPage = data?.data?.pagination?.lastPage;
+  
+  useEffect(() => {
+    let lastPage = data?.data?.pagination?.lastPage
+     lastPage ? setTotalPage(lastPage) :null
+  },[data])
+
   const onPageChange = (i) => {
     setCurrentPage(i);
   };
