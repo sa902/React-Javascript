@@ -7,6 +7,7 @@ import Form from './Components/Form'
 import { AnimatePresence, motion } from "framer-motion";
 import useModal from "./hooks/useModal";
 import Modal from "./components/Modal";
+import GlobalStyle from './globalStyle';
 const queryClient = new QueryClient();
 export default function App() {
 	const { modalOpen, close, open } = useModal();
@@ -22,6 +23,7 @@ export default function App() {
 	}
 	return (
 		<QueryClientProvider client={queryClient}>
+      <GlobalStyle />
 			<Layout>
 {/* 
 <motion.main>

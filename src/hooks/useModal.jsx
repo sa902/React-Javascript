@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  body.body-no-scroll {
-    overflow: hidden;
-  }
-`;
+// const GlobalStyle = createGlobalStyle`
+//   body.body-no-scroll {
+//     overflow: hidden;
+//   }
+// `;
 // Centralizes modal control
 
 const useModal = () => {

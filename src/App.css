@@ -39,9 +39,9 @@
 	z-index: 10;
 	overflow-y: hidden !important;
   }
-  body.body-no-scroll {
+  /* body.body-no-scroll {
 	overflow: hidden;
-  }
+  } */
 
   .modal {
 	width: clamp(50%, 700px, 90%);
