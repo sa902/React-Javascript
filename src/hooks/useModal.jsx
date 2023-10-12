@@ -4,7 +4,6 @@ const useModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const close = () => {
-    console.log('inside our close function')
     document.body.classList.remove("body-no-scroll");
     setModalOpen(false);
   };
