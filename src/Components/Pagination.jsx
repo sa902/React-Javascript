@@ -12,7 +12,6 @@ const PageNumbers = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
-  font-family: "Patrick Hand";
   font-size: 20px;
 `;
 
@@ -20,6 +19,9 @@ const PageNumber = styled.li`
   margin: 0 5px;
   cursor: pointer;
   &.active {
+    padding:1px;
+    border: 2px solid #000; 
+    border-radius: 50%;
     font-weight: bold;
   }
 `;
