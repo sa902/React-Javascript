@@ -86,13 +86,6 @@ export default function ResultsBox({ search, searchData }) {
               <VisualCard
                 key={house.id}
                 house={house}
-                // title={house.title}
-                // image={house.image_ids[0]}
-                // tableData={{
-                // 	bathroom:house.bathrooms,
-                // 	bedroom: house.bedrooms,
-                // 	price:house.price,
-                // }}
               />
             </Item>
           );
