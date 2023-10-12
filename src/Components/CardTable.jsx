@@ -16,21 +16,21 @@ const StyledTable = styled.table`
   }
 `;
 
-const CardTable = ({ tableData }) => {
+const CardTable = ({ price,bedrooms,bathrooms }) => {
   return (
     <StyledTable>
       <tbody>
         <tr>
           <th>Price</th>
-          <th>${tableData?.price} p/wk</th>
+          <th>${price} p/wk</th>
         </tr>
         <tr>
           <td>Bedroom</td>
-          <td>{tableData?.bedroom}</td>
+          <td>{bedrooms}</td>
         </tr>
         <tr>
           <td>Bathroom</td>
-          <td>{tableData?.bathroom}</td>
+          <td>{bathrooms}</td>
         </tr>
       </tbody>
     </StyledTable>

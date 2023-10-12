@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {styled} from 'styled-components'
 import Backdrop from "./Backdrop/";
+import CardTable from "../CardTable";
+import Button from "../Button";
 
 const dropIn = {
   hidden: {
@@ -29,17 +31,22 @@ background-color: #fff;
 width: clamp(50%, 700px, 90%);
 // height: min(50%, 300px);
 margin: auto;
-padding: 0 2rem;
+padding: 2rem;
 border-radius: 12px;
 display: flex;
 flex-direction: column;
 align-items: center;
 `
+const ModalContent= styled.div`
+display:flex;
+flex-direction:column;
+justify-content: center;
+align-items:center;
+`
 
+const Modal = ({ handleClose, text,house }) => {
 
-const Modal = ({ handleClose, text }) => {
-
-
+  const {bedrooms,bathrooms,price} = house;
   return (
     <Backdrop onClick={handleClose}>
       <ModalSheet>
@@ -52,31 +59,31 @@ const Modal = ({ handleClose, text }) => {
           exit="exit"
         >
         </motion.div>
-          <ModalText text={text} />
-          <ModalText text={text} />
-          <ModalText text={text} />
-          <ModalText text={text} />
-          <ModalButton onClick={handleClose} label="Close" />
+ <ModalContent>
+    <h3>{house.title}</h3>
+    <CardTable bedrooms={bedrooms} bathrooms={bathrooms} price={price}></CardTable>
+    <h5>
+      {house.description}
+    </h5>
+ </ModalContent>
+
+
+          <Button onClick={handleClose} text={'close'}></Button>
         </ModalSheet>
 
     </Backdrop>
   );
 };
 
-const ModalText = ({ text }) => (
-  <div className="modal-text">
-    <h3>{text}</h3>
-    <h5>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam labore, totam
-      expedita voluptates tempore asperiores sequi, alias cum veritatis, minima dolor iste similique
-      eos id. Porro, culpa? Officiis, placeat?
-    </h5>
-  </div>
-);
+// const ModalText = ({ text,house }) => (
+  
+
+// );
 
 const ModalButton = ({ onClick, label }) => (
+
   <motion.button
-    className="modal-button"
+    className=""
     type="button"
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.95 }}

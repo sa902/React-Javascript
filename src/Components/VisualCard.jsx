@@ -6,8 +6,9 @@ import Modal from "./Modal";
 const handleCardClick = () => {
 	console.log('handled click')
 }
-export default function VisualCard({title, tableData,image}) {
+export default function VisualCard({house}) {
 	const { modalOpen, close, open } = useModal();
+	const {title, image_ids,bedrooms,bathrooms,price} = house;
 	return (
 		<>
 <motion.main>
@@ -25,9 +26,9 @@ onClick={open}
 				<div style={{ color: 'black', fontSize: 30, fontFamily: 'Inter', margin:15,padding:15, fontWeight: '400', wordWrap: 'break-word', paddingBottom: '0.5em', fontFamily:"Patrick Hand" }}>{title}</div>
 
 				<div style={{ maxWidth: 192, maxHeight: 233, background: '', borderRadius: 5, marginRight: '1em' }} >
-					<img src={`https://trademe.tmcdn.co.nz/photoserver/med/${image}.jpg`}  ></img>
+					<img src={`https://trademe.tmcdn.co.nz/photoserver/med/${image_ids[0]}.jpg`}  ></img>
 				</div>
-				<CardTable tableData={tableData}></CardTable>
+				<CardTable bedrooms={bedrooms} bathrooms={bathrooms} price={price}></CardTable>
 			</div>
 		</div>
 </motion.div>
@@ -37,7 +38,7 @@ initial={false}
 mode={'wait'}
 >
 {modalOpen && (
-<Modal modalOpen={modalOpen} text={title}  handleClose={close} />
+<Modal modalOpen={modalOpen} text={title} house={house}  handleClose={close} />
 )}
 </AnimatePresence>
 </>
