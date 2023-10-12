@@ -1,10 +1,23 @@
 import CardTable from './CardTable'
+import { AnimatePresence, motion } from "framer-motion";
+
+import useModal from "../hooks/useModal";
+import Modal from "./Modal";
 const handleCardClick = () => {
 	console.log('handled click')
 }
 export default function VisualCard({title, tableData,image}) {
+	const { modalOpen, close, open } = useModal();
 	return (
-		<div style={{display: 'flex', justifyContent:'center'}} onClick={handleCardClick}>
+		<>
+<motion.main>
+<motion.div
+whileHover={{ scale: 1.1 }}
+whileTap={{ scale: 0.9 }}
+className="save-button"
+onClick={open}
+>
+<div style={{display: 'flex', justifyContent:'center'}} onClick={handleCardClick}>
 			<img style={{ width: 325, height: 450, position: 'absolute' }} src="./CardBG.png" ></img>
 			
 			<div style={{ width: 325, height: 425, position: 'relative', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center', display: 'inline-flex' }}>
@@ -17,5 +30,17 @@ export default function VisualCard({title, tableData,image}) {
 				<CardTable tableData={tableData}></CardTable>
 			</div>
 		</div>
+</motion.div>
+</motion.main>
+<AnimatePresence
+initial={false}
+mode={'wait'}
+>
+{modalOpen && (
+<Modal modalOpen={modalOpen} text={title}  handleClose={close} />
+)}
+</AnimatePresence>
+</>
+
 	)
 }
