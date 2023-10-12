@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Layout from "./Layouts/Layout";
