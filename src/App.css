@@ -4,14 +4,11 @@
     width: 70%;
   }
 }
-.logo {
-  width: 300px;
-  margin: auto;
-}
-.centre {
+
+/* .centre {
   display: flex;
   justify-content: center;
-}
+} */
 .parent {
   margin: auto;
   width: 60%;
@@ -59,10 +56,10 @@
   input {
     width: calc(25vw);
   }
-  h1 {
+  /* h1 {
     color: #ff9d00;
-    font-size: 250%;
-  }
+
+  } */
 }
 
 .save-button {

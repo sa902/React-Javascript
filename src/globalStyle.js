@@ -1,14 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    // margin: 0;
-    // padding: 0;
-    // background: teal;
+// setsome global defaults   
+body {
     font-family: "patrick hand";
   }
+  // For use with hiding background with modal
   body.body-no-scroll {
-	overflow: hidden;
+	  overflow: hidden;
+  }
+  // Common Use Cases 
+  .centre {
+    display: flex;
+    justify-content: center;
   }
 `;
 
