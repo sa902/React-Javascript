@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
- 
+import { createGlobalStyle } from "styled-components";
+
 const GlobalStyle = createGlobalStyle`
   body {
     // margin: 0;
@@ -11,5 +11,5 @@ const GlobalStyle = createGlobalStyle`
 	overflow: hidden;
   }
 `;
- 
+
 export default GlobalStyle;

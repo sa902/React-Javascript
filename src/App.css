@@ -1,49 +1,44 @@
-
-.main{
-	margin: auto;
-  @media (min-width: 960px){
-    width: 70%; 
-	}
+.main {
+  margin: auto;
+  @media (min-width: 960px) {
+    width: 70%;
+  }
 }
-.logo{
-	width: 300px;
-	margin: auto;
+.logo {
+  width: 300px;
+  margin: auto;
 }
 .centre {
-	display: flex;
-	justify-content: center;
-	
+  display: flex;
+  justify-content: center;
 }
 .parent {
-	margin:auto;
-	width:60%;
+  margin: auto;
+  width: 60%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(3, 1fr);
 }
 
-
-
-
 .backdrop {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: #000000e3;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 10;
-	overflow-y: hidden !important;
-  }
-  /* body.body-no-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  overflow-y: hidden !important;
+}
+/* body.body-no-scroll {
 	overflow: hidden;
   } */
 
-  .modal {
-	/* width: clamp(50%, 700px, 90%);
+.modal {
+  /* width: clamp(50%, 700px, 90%);
 	height: min(50%, 300px);
 	margin: auto;
 	padding: 0 2rem;
@@ -51,46 +46,45 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center; */
+}
+@media screen and (min-width: 960px) {
+  button {
+    cursor: pointer;
   }
-  @media screen and (min-width: 960px) {
-	button {
-	  cursor: pointer;
-	}
-	/* .modal {
+  /* .modal {
 	  width: 750px;
 	  height: 300px;
 	} */
-	.input,
-	input {
-	  width: calc(25vw);
-	}
-	h1 {
-	  color: #ff9d00;
-	  font-size: 250%;
-	}
+  .input,
+  input {
+    width: calc(25vw);
   }
+  h1 {
+    color: #ff9d00;
+    font-size: 250%;
+  }
+}
 
-  .save-button {
-	padding: 0 1rem;
-	margin: 2rem auto auto 0;
-	background: var(--gradient);
-	color: var(--dark);
-	border: #ff9d00 3px;
-  }
+.save-button {
+  padding: 0 1rem;
+  margin: 2rem auto auto 0;
+  background: var(--gradient);
+  color: var(--dark);
+  border: #ff9d00 3px;
+}
 
+* {
+  box-sizing: border-box;
+}
 
-  * {
-	box-sizing: border-box;
-  }
-  
-  body {
-	/* background: var(--dark); */
-	/* font-family: "Montserrat", sans-serif; */
-	/* height: 100%; */
-	/* overflow-y: hidden; */
-  }
-  
-  /* main {
+body {
+  /* background: var(--dark); */
+  /* font-family: "Montserrat", sans-serif; */
+  /* height: 100%; */
+  /* overflow-y: hidden; */
+}
+
+/* main {
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -98,4 +92,3 @@
 	align-items: center;
 	overflow-y: hidden;
   } */
-  

@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const PageNumbers = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
-  font-family:"Patrick Hand";
+  font-family: "Patrick Hand";
   font-size: 20px;
 `;
 
@@ -34,9 +34,8 @@ const ArrowButton = styled.button`
 `;
 
 const Image = styled.img`
-max-width : 50px;
-`
-
+  max-width: 50px;
+`;
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const renderPageNumbers = () => {
@@ -61,11 +60,11 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       pageNumbers.push(
         <PageNumber
           key={i}
-          className={currentPage === i ? 'active' : ''}
+          className={currentPage === i ? "active" : ""}
           onClick={() => onPageChange(i)}
         >
           {i}
-        </PageNumber>
+        </PageNumber>,
       );
     }
 
