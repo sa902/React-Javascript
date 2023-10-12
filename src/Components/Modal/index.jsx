@@ -43,10 +43,10 @@ const ModalContent = styled.div`
   align-items: center;
 `;
 
-const Modal = ({ handleClose, house }) => {
-  const { bedrooms, bathrooms, price } = house;
+const Modal = ({ children, handleClose }) => {
   return (
     <Backdrop onClick={handleClose}>
+      {/* const { bedrooms, bathrooms, price } = house; */}
         <ModalSheet
           onClick={(e) => e.stopPropagation()} // Prevent click from closing modal
           variants={dropIn}
@@ -55,14 +55,15 @@ const Modal = ({ handleClose, house }) => {
           exit="exit"
         >
   <ModalContent>
-          <h2>{house.title}</h2>
+          {/* <h2>{house.title}</h2>
           <CardTable
             bedrooms={bedrooms}
             bathrooms={bathrooms}
             price={price}
           ></CardTable>
           <h4>{house.description}</h4>
-          <ImageCarousel images={house.image_ids}></ImageCarousel>
+          <ImageCarousel images={house.image_ids}></ImageCarousel> */}
+          {children}
         </ModalContent>
 
         <Button clickFn={handleClose} text={"close"}></Button>

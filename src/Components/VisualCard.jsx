@@ -1,9 +1,10 @@
 import React from "react";
-import CardTable from "./CardTable";
 import { AnimatePresence, motion } from "framer-motion";
 import useModal from "../hooks/useModal";
-import Modal from "./Modal";
 import styled from "styled-components";
+import Modal from "./Modal";
+import CardTable from "./CardTable";
+import ImageCarousel from "./ImageCarousel";
 
 const BackgroundImage = styled.img`
 width: 325px; 
@@ -38,7 +39,7 @@ padding-bottom: 0.5em;
 
 const VisualCard = ({ house }) => {
   const { modalOpen, close, open } = useModal();
-  const { title, image_ids, bedrooms, bathrooms, price } = house;
+  const { title, image_ids, bedrooms, bathrooms, price,description } = house;
 
   return (
     <>
@@ -79,10 +80,17 @@ const VisualCard = ({ house }) => {
       {modalOpen && (
         <Modal
           modalOpen={modalOpen}
-          text={title}
-          house={house}
           handleClose={close}
-        />
+        >
+            <h2>{title}</h2>
+          <CardTable
+            bedrooms={bedrooms}
+            bathrooms={bathrooms}
+            price={price}
+          ></CardTable>
+          <h4>{description}</h4>
+          <ImageCarousel images={image_ids}></ImageCarousel>
+          </Modal>
       )}
     </AnimatePresence>
     </>
