@@ -26,7 +26,7 @@
 
 
 .backdrop {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	color: aliceblue;
@@ -38,6 +38,9 @@
 	justify-content: center;
 	z-index: 10;
 	overflow-y: hidden !important;
+  }
+  body.body-no-scroll {
+	overflow: hidden;
   }
 
   .modal {
