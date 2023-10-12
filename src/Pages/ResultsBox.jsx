@@ -1,10 +1,10 @@
 import { useState,useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import VisualCard from './VisualCard'
+import VisualCard from '../Components/VisualCard'
 import styled from 'styled-components';
 import Pagination from "../Components/Pagination"
-import Button from './Button'
+import Button from '../Components/Button'
 
 const Container = styled.div`
 display:grid;

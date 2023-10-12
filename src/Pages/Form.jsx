@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import {useState} from 'react';
-import Button from "./Button";
+import Button from "../Components/Button";
 const Container = styled.div`
     font-family:"inter";
     display:grid;

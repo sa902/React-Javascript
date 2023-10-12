@@ -1,16 +1,12 @@
 import './App.css'
 import { useState } from 'react'
 import  {QueryClientProvider,QueryClient} from '@tanstack/react-query'
-import ResultsBox from './Components/ResultsBox'
-import Layout from './layouts/Layout'
-import Form from './Components/Form'
-import { AnimatePresence, motion } from "framer-motion";
-import useModal from "./hooks/useModal";
-import Modal from "./components/Modal";
+import Layout from './Layouts/Layout'
+import ResultsBox from './Pages/ResultsBox'
+import Form from './Pages/Form'
 import GlobalStyle from './globalStyle';
 const queryClient = new QueryClient();
 export default function App() {
-	const { modalOpen, close, open } = useModal();
 	let [isForm, setIsForm] = useState(true);
 	let [searchData, setSearchData] = useState({});
 	const search = () => {
