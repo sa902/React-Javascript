@@ -10,8 +10,8 @@ const Container = styled.div`
   display: grid;
   grid-gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(251px, 1fr));
-  max-width: 1050px; /* Set a maximum width for the grid */
-  margin: 0 auto; /* Center align the grid */
+  max-width: 1050px; /* set a max width */
+  margin: 0 auto; /* centre the div */
 `;
 
 const NewSearchButtonContainer = styled.div`

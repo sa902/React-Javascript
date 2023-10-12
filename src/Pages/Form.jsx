@@ -10,17 +10,10 @@ const Container = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: 960px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
   @media (min-width: 768px) {
     div:nth-of-type(even) {
       justify-self: start;
     }
-
     div:nth-of-type(odd) {
       justify-self: end;
     }
@@ -34,13 +27,10 @@ const Container = styled.div`
 `;
 const Item = styled.div`
   display: flex;
-  // margin-left:1em;
-  // margin-right: 1em;
   justify-content: space-between;
   width: 90%;
   flex-direction: column;
   @media (min-width: 960px) {
-    grid-template-columns: repeat(2, 1fr);
     width: 170px;
   }
 `;
@@ -58,23 +48,28 @@ const ButtonContainer = styled.div`
 `;
 
 const Select = styled.select`
-  // width:140px;
-
   background: transparent;
-  // -ms-flex-item-align: center;
-  // align-self: center;
   outline: none;
   border: 2.5px solid;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
   border-bottom-right-radius: 225px 15px;
   border-bottom-left-radius: 15px 255px;
-  font-family: "Patrick Hand";
-  /*     font-family: 'Shadows Into Light', cursive; */
-  /*     font-family: 'Covered By Your Grace', cursive; */
   padding: 0.2rem 0.4rem;
-  // color: #717171;
+  font-size:16px;
 `;
+
+const priceRange = Array.from({ length: 11 }, (_, index) =>
+index === 0 ? "" : (index * 100).toString(),
+);
+//TODO API to get max bathrooms and bed rooms, constants for now
+const maxBathroom = 4;
+const maxBedroom = 6;
+const bedRoomRange = Array.from({ length: maxBedroom + 1 }, (_, index) =>
+index === 0 ? "" : index.toString());
+const bathroomRange = Array.from({ length: maxBathroom + 1 }, (_, index) =>
+index === 0 ? "" : index.toString());
+
 export default function Form({ search, handleFormClick }) {
   const [formData, setFormData] = useState({
     minBedroom: "",
@@ -84,20 +79,6 @@ export default function Form({ search, handleFormClick }) {
     minPrice: "",
     maxPrice: "",
   });
-  const priceRange = Array.from({ length: 11 }, (_, index) =>
-    index === 0 ? "" : (index * 100).toString(),
-  );
-  //TODO API to get max bathrooms and bed rooms, constants for now
-  const maxBathroom = 4;
-  const maxBedroom = 6;
-  const bedRoomRange = Array.from({ length: maxBedroom + 1 }, (_, index) =>
-    index === 0 ? "" : index.toString(),
-  );
-  const bathroomRange = Array.from({ length: maxBathroom + 1 }, (_, index) =>
-    index === 0 ? "" : index.toString(),
-  );
-  console.log(priceRange);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     handleFormClick(formData);
