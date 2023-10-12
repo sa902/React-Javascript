@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { styled } from "styled-components";
 import Backdrop from "./Backdrop/";
@@ -26,10 +25,9 @@ const dropIn = {
   },
 };
 
-const ModalSheet = styled.div`
+const ModalSheet = styled(motion.div)`
   background-color: #fff;
   width: clamp(50%, 700px, 90%);
-  // height: min(50%, 300px);
   margin: auto;
   padding: 2rem;
   border-radius: 12px;
@@ -44,49 +42,34 @@ const ModalContent = styled.div`
   align-items: center;
 `;
 
-const Modal = ({ handleClose, text, house }) => {
+const Modal = ({ handleClose, house }) => {
   const { bedrooms, bathrooms, price } = house;
   return (
     <Backdrop onClick={handleClose}>
-      <ModalSheet>
-        <motion.div
+        <ModalSheet
           onClick={(e) => e.stopPropagation()} // Prevent click from closing modal
-          className=""
           variants={dropIn}
           initial="hidden"
           animate="visible"
           exit="exit"
-        ></motion.div>
-        <ModalContent>
-          <h3>{house.title}</h3>
+        >
+  <ModalContent>
+          <h2>{house.title}</h2>
           <CardTable
             bedrooms={bedrooms}
             bathrooms={bathrooms}
             price={price}
           ></CardTable>
-          <h5>{house.description}</h5>
+          <h4>{house.description}</h4>
         </ModalContent>
 
-        <Button onClick={handleClose} text={"close"}></Button>
-      </ModalSheet>
+        <Button clickFn={handleClose} text={"close"}></Button>
+
+        </ModalSheet>
+      
+
     </Backdrop>
   );
 };
-
-// const ModalText = ({ text,house }) => (
-
-// );
-
-const ModalButton = ({ onClick, label }) => (
-  <motion.button
-    className=""
-    type="button"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-    onClick={onClick}
-  >
-    {label}
-  </motion.button>
-);
 
 export default Modal;

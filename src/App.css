@@ -70,16 +70,11 @@
   border: #ff9d00 3px;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
-body {
-  /* background: var(--dark); */
-  /* font-family: "Montserrat", sans-serif; */
-  /* height: 100%; */
-  /* overflow-y: hidden; */
-}
+
 
 /* main {
 	margin: auto;

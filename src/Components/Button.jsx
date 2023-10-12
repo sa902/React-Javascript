@@ -1,4 +1,17 @@
 import styled from "styled-components";
+
+// const ModalButton = ({ onClick, label }) => (
+//   <motion.button
+//     className=""
+//     type="button"
+//     whileHover={{ scale: 1.1 }}
+//     whileTap={{ scale: 0.95 }}
+//     onClick={onClick}
+//   >
+//     {label}
+//   </motion.button>
+// );
+
 const StyledButton = styled.button`
   min-height: 45px;
   padding: 5px 15px;
